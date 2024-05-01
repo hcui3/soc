@@ -13,7 +13,8 @@ import { auth } from "@clerk/nextjs/server";
 export default async function Home() {
   const { userId } = auth();
 
-  const result = await getQuestions({});
+  // const result = await getQuestions({});
+  const result = [];
 
   return (
     <>
