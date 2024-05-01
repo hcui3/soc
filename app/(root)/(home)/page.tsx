@@ -1,17 +1,17 @@
 import React from "react";
-import QuestionCard from "@/components/cards/QuestionCard";
+// import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilters from "@/components/home/HomeFilters";
 import Filter from "@/components/shared/Filter";
 import NoResult from "@/components/shared/NoResult";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
-import { getQuestions } from "@/lib/actions/question.action";
+// import { getQuestions } from "@/lib/actions/question.action";
 import Link from "next/link";
-import { auth } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs/server";
 
 export default async function Home() {
-  const { userId } = auth();
+  // const { userId } = auth();
 
   // const result = await getQuestions({});
 
