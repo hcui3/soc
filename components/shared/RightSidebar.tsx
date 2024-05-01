@@ -5,31 +5,31 @@ import RenderTag from "./RenderTag";
 
 const hotQuestions = [
   {
-    _id: 1,
+    _id: "1",
     title: "How to create a custom hook in React?",
     votes: 3,
     answers: 2,
   },
   {
-    _id: 2,
+    _id: "2",
     title: "How to use React Router?",
     votes: 5,
     answers: 3,
   },
   {
-    _id: 3,
+    _id: "3",
     title: "How to use styled-components in React?",
     votes: 2,
     answers: 1,
   },
   {
-    _id: 4,
+    _id: "4",
     title: "How to use React Context?",
     votes: 4,
     answers: 2,
   },
   {
-    _id: 5,
+    _id: "5",
     title: "How to use React Query?",
     votes: 5,
     answers: 3,
@@ -38,27 +38,27 @@ const hotQuestions = [
 
 const popularTags = [
   {
-    _id: 1,
+    _id: "1",
     name: "React",
     totalQuestions: 10,
   },
   {
-    _id: 2,
+    _id: "2",
     name: "Next.js",
     totalQuestions: 7,
   },
   {
-    _id: 3,
+    _id: "3",
     name: "TypeScript",
     totalQuestions: 16,
   },
   {
-    _id: 4,
+    _id: "3",
     name: "JavaScript",
     totalQuestions: 12,
   },
   {
-    _id: 5,
+    _id: "5",
     name: "CSS",
     totalQuestions: 8,
   },
