@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { formatAndDivideNumber, getTimestamp } from "@/lib/utils";
-import { SignedIn } from "@clerk/nextjs";
+// import { SignedIn } from "@clerk/nextjs";
 import RenderTag from "../shared/RenderTag";
 import Metric from "../shared/Metric";
 
