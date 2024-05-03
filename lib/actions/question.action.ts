@@ -10,11 +10,13 @@ import {
   GetQuestionByIdParams,
   RecommendedParams,
   QuestionVoteParams,
+  DeleteQuestionParams,
 } from "./shared.types";
 import User from "@/database/user.model";
 import { revalidatePath } from "next/cache";
 import Interaction from "@/database/interaction.model";
 import { FilterQuery } from "mongoose";
+import Answer from "@/database/answer.model";
 
 export async function getQuestions(params: GetQuestionsParams) {
   try {
@@ -314,5 +316,25 @@ export async function getRecommendedQuestions(params: RecommendedParams) {
   } catch (error) {
     console.error("Error getting recommended questions:", error);
     throw error;
+  }
+}
+
+export async function deleteQuestion(params: DeleteQuestionParams) {
+  try {
+    connectToDatabase();
+
+    const { questionId, path } = params;
+
+    await Question.deleteOne({ _id: questionId });
+    await Answer.deleteMany({ question: questionId });
+    await Interaction.deleteMany({ question: questionId });
+    await Tag.updateMany(
+      { questions: questionId },
+      { $pull: { questions: questionId } }
+    );
+
+    revalidatePath(path);
+  } catch (error) {
+    console.log(error);
   }
 }

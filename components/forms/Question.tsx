@@ -41,6 +41,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
 
   const groupedTags = parsedQuestionDetails?.tags.map((tag: any) => tag.name);
 
+  // 1. Define your form.
   const form = useForm<z.infer<typeof QuestionsSchema>>({
     resolver: zodResolver(QuestionsSchema),
     defaultValues: {
@@ -50,6 +51,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
     },
   });
 
+  // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof QuestionsSchema>) {
     setIsSubmitting(true);
 
@@ -143,7 +145,6 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="explanation"
@@ -201,7 +202,6 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="tags"
@@ -213,10 +213,12 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
               <FormControl className="mt-3.5">
                 <>
                   <Input
+                    disabled={type === "Edit"}
                     className="no-focus paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 min-h-[56px] border"
                     placeholder="Add tags..."
                     onKeyDown={(e) => handleInputKeyDown(e, field)}
                   />
+
                   {field.value.length > 0 && (
                     <div className="flex-start mt-2.5 gap-2.5">
                       {field.value.map((tag: any) => (
@@ -253,7 +255,6 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
             </FormItem>
           )}
         />
-
         <Button
           type="submit"
           className="primary-gradient w-fit !text-light-900"
