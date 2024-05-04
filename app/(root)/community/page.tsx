@@ -44,6 +44,13 @@ const Page = async ({ searchParams }: SearchParamsProps) => {
           </div>
         )}
       </section>
+
+      {/* <div className="mt-10">
+        <Pagination 
+          pageNumber={searchParams?.page ? +searchParams.page : 1}
+          isNext={result.isNext}
+        />
+      </div> */}
     </>
   );
 };
