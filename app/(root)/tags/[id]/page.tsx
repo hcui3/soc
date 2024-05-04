@@ -4,6 +4,7 @@ import { URLProps } from "@/types";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import QuestionCard from "@/components/cards/QuestionCard";
 import NoResult from "@/components/shared/NoResult";
+import Pagination from "@/components/shared/Pagination";
 
 const Page = async ({ params, searchParams }: URLProps) => {
   const result = await getQuestionsByTagId({
@@ -43,7 +44,7 @@ const Page = async ({ params, searchParams }: URLProps) => {
           ))
         ) : (
           <NoResult
-            title="There’s no tag question saved to show"
+            title="There's no tag question saved to show"
             description="Be the first to break the silence! 🚀 Ask a Question and kickstart the discussion. our query could be the next big thing others learn from. Get involved! 💡"
             link="/ask-question"
             linkTitle="Ask a Question"
@@ -51,12 +52,12 @@ const Page = async ({ params, searchParams }: URLProps) => {
         )}
       </div>
 
-      {/* <div className="mt-10">
-          <Pagination 
-            pageNumber={searchParams?.page ? +searchParams.page : 1}
-            isNext={result.isNext}
-          />
-        </div> */}
+      <div className="mt-10">
+        <Pagination
+          pageNumber={searchParams?.page ? +searchParams.page : 1}
+          isNext={result.isNext}
+        />
+      </div>
     </>
   );
 };

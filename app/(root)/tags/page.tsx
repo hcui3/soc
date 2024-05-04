@@ -5,6 +5,7 @@ import Filter from "@/components/shared/Filter";
 import { TagFilters } from "@/constants/filters";
 import Link from "next/link";
 import NoResult from "@/components/shared/NoResult";
+import Pagination from "@/components/shared/Pagination";
 
 const Page = async ({ searchParams }: SearchParamsProps) => {
   const result = await getAllTags({
@@ -50,7 +51,7 @@ const Page = async ({ searchParams }: SearchParamsProps) => {
                 <p className="small-medium text-dark400_light500 mt-3.5">
                   <span className="body-semibold primary-text-gradient mr-2.5">
                     {tag.questions.length}+
-                  </span>
+                  </span>{" "}
                   Questions
                 </p>
               </article>
@@ -65,6 +66,13 @@ const Page = async ({ searchParams }: SearchParamsProps) => {
           />
         )}
       </section>
+
+      <div className="mt-10">
+        <Pagination
+          pageNumber={searchParams?.page ? +searchParams.page : 1}
+          isNext={result.isNext}
+        />
+      </div>
     </>
   );
 };
