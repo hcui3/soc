@@ -25,8 +25,8 @@ export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
     // Interaction...
 
     return [
-      { _id: "1", name: "React" },
-      { _id: "2", name: "Next" },
+      { _id: "1", name: "tag1" },
+      { _id: "2", name: "tag2" },
     ];
   } catch (error) {
     console.log(error);
@@ -38,7 +38,7 @@ export async function getAllTags(params: GetAllTagsParams) {
   try {
     connectToDatabase();
 
-    const { searchQuery, filter, page = 1, pageSize = 10 } = params;
+    const { searchQuery, filter, page = 1, pageSize = 12 } = params;
     const skipAmount = (page - 1) * pageSize;
 
     const query: FilterQuery<typeof Tag> = {};
@@ -101,7 +101,7 @@ export async function getQuestionsByTagId(params: GetQuestionsByTagIdParams) {
       options: {
         sort: { createdAt: -1 },
         skip: skipAmount,
-        limit: pageSize + 1, // +1 to check if there is next page
+        limit: pageSize,
       },
       populate: [
         { path: "tags", model: Tag, select: "_id name" },
@@ -113,7 +113,12 @@ export async function getQuestionsByTagId(params: GetQuestionsByTagIdParams) {
       throw new Error("Tag not found");
     }
 
-    const isNext = tag.questions.length > pageSize;
+    // Determine if there's a next page
+    const totalQuestions = await Question.countDocuments({
+      tags: tagId,
+      ...(searchQuery ? { title: { $regex: searchQuery, $options: "i" } } : {}),
+    });
+    const isNext = totalQuestions > skipAmount + tag.questions.length;
 
     const questions = tag.questions;
 

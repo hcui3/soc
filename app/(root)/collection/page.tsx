@@ -7,6 +7,7 @@ import Filter from "@/components/shared/Filter";
 import { QuestionFilters } from "@/constants/filters";
 import QuestionCard from "@/components/cards/QuestionCard";
 import NoResult from "@/components/shared/NoResult";
+import Pagination from "@/components/shared/Pagination";
 
 export default async function Home({ searchParams }: SearchParamsProps) {
   const { userId } = auth();
@@ -64,12 +65,12 @@ export default async function Home({ searchParams }: SearchParamsProps) {
         )}
       </div>
 
-      {/* <div className="mt-10">
-        <Pagination 
+      <div className="mt-10">
+        <Pagination
           pageNumber={searchParams?.page ? +searchParams.page : 1}
           isNext={result.isNext}
         />
-      </div> */}
+      </div>
     </>
   );
 }
