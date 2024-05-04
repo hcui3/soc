@@ -3,6 +3,11 @@
 import Question from "@/database/question.model";
 import Tag from "@/database/tag.model";
 import { connectToDatabase } from "../mongoose";
+import User from "@/database/user.model";
+import { revalidatePath } from "next/cache";
+import Interaction from "@/database/interaction.model";
+import { FilterQuery } from "mongoose";
+import Answer from "@/database/answer.model";
 import {
   CreateQuestionParams,
   EditQuestionParams,
@@ -12,11 +17,6 @@ import {
   QuestionVoteParams,
   DeleteQuestionParams,
 } from "./shared.types";
-import User from "@/database/user.model";
-import { revalidatePath } from "next/cache";
-import Interaction from "@/database/interaction.model";
-import { FilterQuery } from "mongoose";
-import Answer from "@/database/answer.model";
 
 export async function getQuestions(params: GetQuestionsParams) {
   try {
