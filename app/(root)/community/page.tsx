@@ -6,6 +6,11 @@ import { UserFilters } from "@/constants/filters";
 import UserCard from "@/components/cards/UserCard";
 import Link from "next/link";
 import Pagination from "@/components/shared/Pagination";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Community | Stack Overflow Clone",
+};
 
 const Page = async ({ searchParams }: SearchParamsProps) => {
   const result = await getAllUsers({
