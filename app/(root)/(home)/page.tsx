@@ -14,6 +14,11 @@ import {
   getQuestions,
   getRecommendedQuestions,
 } from "@/lib/actions/question.action";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home | Stack Overflow Clone",
+};
 
 export default async function Home({ searchParams }: SearchParamsProps) {
   const { userId } = auth();
