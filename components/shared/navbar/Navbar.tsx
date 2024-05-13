@@ -8,16 +8,16 @@ import GlobalSearch from "../search/GlobalSearch";
 
 const Navbar = () => {
   return (
-    <nav className="flex-between background-light900_dark200 fixed z-50 w-full gap-5 p-6 shadow-light-300 dark:shadow-none sm:px-12">
+    <nav className="flex-between background-light900_dark200 fixed z-50 w-full gap-5 p-6 shadow-light-300 dark:shadow-none sm:px-8">
       <Link href="/" className="flex items-center gap-1">
         <Image
           src="/assets/images/site-logo.svg"
-          width={23}
-          height={23}
+          width={25}
+          height={25}
           alt="DevFlow"
         />
         <p className="h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
-          Stack <span className="text-primary-500">Overflow</span>
+          Stack <span className="text-primary-500">Puzzle</span>
         </p>
       </Link>
       <GlobalSearch />

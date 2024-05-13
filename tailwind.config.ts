@@ -18,25 +18,25 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          500: "#FF7000",
-          100: "#FFF1E6",
+          500: "hsla(217, 100%, 46%, 1)",
+          100: "hsla(220, 100%, 95%, 1)",
         },
         dark: {
-          100: "#000000",
-          200: "#0F1117",
-          300: "#151821",
-          400: "#212734",
-          500: "#101012",
+          "100": "hsla(0, 0%, 0%, 1)",
+          "200": "hsla(225, 11%, 7%, 1)",
+          "300": "hsla(225, 17%, 10%, 1)",
+          "400": "hsla(222, 23%, 17%, 1)",
+          "500": "hsla(240, 8%, 6%, 1)",
         },
         light: {
-          900: "#FFFFFF",
-          800: "#F4F6F8",
-          850: "#FDFDFD",
-          700: "#DCE3F1",
-          500: "#7B8EC8",
-          400: "#858EAD",
+          "900": "hsla(0, 0%, 100%, 1)",
+          "800": "hsla(210, 14%, 97%, 1)",
+          "850": "hsla(0, 0%, 99%, 1)",
+          "700": "hsla(216, 37%, 91%, 1)",
+          "500": "hsla(228, 34%, 65%, 1)",
+          "400": "hsla(227, 16%, 61%, 1)",
         },
-        "accent-blue": "#1DA1F2",
+        "accent-blue": "hsla(204, 86%, 57%, 1)",
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
@@ -44,11 +44,11 @@ module.exports = {
       },
       boxShadow: {
         "light-100":
-          "0px 12px 20px 0px rgba(184, 184, 184, 0.03), 0px 6px 12px 0px rgba(184, 184, 184, 0.02), 0px 2px 4px 0px rgba(184, 184, 184, 0.03)",
-        "light-200": "10px 10px 20px 0px rgba(218, 213, 213, 0.10)",
-        "light-300": "-10px 10px 20px 0px rgba(218, 213, 213, 0.10)",
-        "dark-100": "0px 2px 10px 0px rgba(46, 52, 56, 0.10)",
-        "dark-200": "2px 0px 20px 0px rgba(39, 36, 36, 0.04)",
+          "0px 12px 20px 0px hsla(0, 0%, 72%, 0.03), 0px 6px 12px 0px hsla(0, 0%, 72%, 0.02), 0px 2px 4px 0px hsla(0, 0%, 72%, 0.03)",
+        "light-200": "10px 10px 20px 0px hsla(0, 9%, 85%, 0.10)",
+        "light-300": "-10px 10px 20px 0px hsla(0, 9%, 85%, 0.10)",
+        "dark-100": "0px 2px 10px 0px hsla(204, 10%, 20%, 0.10)",
+        "dark-200": "2px 0px 20px 0px hsla(0, 5%, 14%, 0.04)",
       },
       backgroundImage: {
         "auth-dark": "url('/assets/images/auth-dark.png')",
