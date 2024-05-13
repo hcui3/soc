@@ -17,7 +17,7 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home | Stack Overflow Clone",
+  title: "Home | Stack Puzzle",
 };
 
 export default async function Home({ searchParams }: SearchParamsProps) {

@@ -21,7 +21,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "soc",
-  description: "stack overflow clone",
+  description: "Stack Puzzle",
   icons: {
     icon: "/assests/images/site-logo.svg",
   },

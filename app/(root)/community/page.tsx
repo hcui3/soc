@@ -9,7 +9,7 @@ import Pagination from "@/components/shared/Pagination";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Community | Stack Overflow Clone",
+  title: "Community | Stack Puzzle",
 };
 
 const Page = async ({ searchParams }: SearchParamsProps) => {
